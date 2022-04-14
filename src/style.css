@@ -1,0 +1,102 @@
+:root {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #06b6d4;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 2rem 1.5rem 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.heading > h1 {
+  font-size: 3rem;
+}
+#image-temp-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+#weather-image {
+  height: 8rem;
+  width: auto;
+}
+.clear {
+  background: linear-gradient(
+    to top,
+    rgba(56, 189, 248, 0),
+    rgba(56, 189, 248, 1)
+  );
+}
+.thunderstorm {
+  background: linear-gradient(
+    to top,
+    rgba(67, 71, 73, 0),
+    rgba(239, 241, 70, 0.692),
+    rgba(82, 85, 85, 0.911),
+    rgb(58, 59, 59)
+  );
+}
+.dizzle {
+  background: linear-gradient(
+    to top,
+    rgba(193, 197, 199, 0),
+    rgba(193, 197, 199, 1)
+  );
+}
+.rain {
+  background: linear-gradient(
+    to top,
+    rgba(56, 191, 248, 0),
+    rgba(56, 191, 248, 0.767),
+    rgba(193, 197, 199, 1)
+  );
+}
+.snow {
+  background: linear-gradient(
+    to top,
+    rgba(56, 191, 248, 0),
+    rgba(56, 191, 248, 0.562),
+    rgb(255, 255, 255)
+  );
+}
+.fog,
+.mist {
+  background: linear-gradient(
+    to top,
+    rgba(193, 197, 199, 0),
+    rgba(193, 197, 199, 0.295),
+    rgb(255, 255, 255),
+    rgba(193, 197, 199, 1)
+  );
+}
+.clouds {
+  background: linear-gradient(
+    to top,
+    rgba(56, 191, 248, 0),
+    rgba(56, 191, 248, 0.767),
+    rgba(193, 197, 199, 1)
+  );
+}
