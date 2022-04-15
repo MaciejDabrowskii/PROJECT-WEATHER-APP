@@ -11,7 +11,12 @@
     <div id="app">
       <div class="heading">
         <h1>WeatherApp</h1>
-        <input type="search" placeholder="Enter town name" />
+        <div class="search-container">
+          <input type="search" id="search-city" placeholder="Enter town name" />
+          <button id="search-btn">Search</button>
+        </div>
+        <p class="units">UNITS:</p>
+        <button id="switch-units">Change</button>
       </div>
       <div class="main-container">
         <div id="image-temp-container">

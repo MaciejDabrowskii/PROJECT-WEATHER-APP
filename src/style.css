@@ -38,10 +38,13 @@ body {
   padding: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  width: 13rem;
+  height: 15rem;
 }
+
 #weather-image {
   height: 8rem;
-  width: auto;
+  width: 100%;
 }
 .clear {
   background: linear-gradient(
