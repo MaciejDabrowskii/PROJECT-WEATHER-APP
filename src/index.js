@@ -3,6 +3,7 @@ import showData from "./show-data";
 import showIcon from "./images";
 import classMenager from "./class-menager";
 import searchByCityName from "./search-city";
+import gitIcon from "./icons/gitLogo.png";
 
 async function getData() {
   let units = "metric";
@@ -141,6 +142,12 @@ async function getData() {
         }
       }
     });
+  document.querySelector("#gitIcon").src = gitIcon;
+  document.querySelector("#gitIcon").addEventListener("click", () => {
+    window
+      .open("https://github.com/MaciejDabrowskii?tab=repositories", "_blank")
+      .focus();
+  });
 }
 
 getData();
