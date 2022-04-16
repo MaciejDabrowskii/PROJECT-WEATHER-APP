@@ -1,3 +1,4 @@
+// SEARCH FUNCTION, WHICH DOWNLOAD API DATA BY SEARCHING BY CITY NAME AND RETURN DATA
 const searchByCityName = async (units) => {
   const search = async () => {
     if (units === "metric") {
@@ -15,7 +16,6 @@ const searchByCityName = async (units) => {
       return SearchWeatherDataMetric;
     } else {
       let searchValue = document.getElementById("search-city").value;
-      console.log(searchValue);
 
       if (units === "imperial") {
         const getSearchWeatherDataImperial = await fetch(

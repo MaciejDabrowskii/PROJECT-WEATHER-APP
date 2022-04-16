@@ -1,4 +1,5 @@
 import windDirectionFunction from "./wind-direction";
+// CREATE DIVS AND POPULATE THEM WITH DATA
 const showData = (data, units) => {
   if (units === "metric") {
     document.querySelector(".units").textContent = `UNITS: ${units}`;
@@ -33,7 +34,7 @@ const showData = (data, units) => {
 
     dataList.append(cityAndCoutry, wind, minMaxTemp, humidity, visibility);
 
-    temperature.textContent = `${Math.round(data.main.temp * 10) / 10} °F`;
+    temperature.textContent = `${Math.round(data.main.temp * 10) / 10} °C`;
   } else {
     document.querySelector(".units").textContent = `UNITS: ${units}`;
     const dataList = document.querySelector(".data-list");
