@@ -16,6 +16,7 @@ import i13d from "./icons/13d.svg";
 import i13n from "./icons/13n.svg";
 import i50d from "./icons/50d.svg";
 import i50n from "./icons/50n.svg";
+import error from "./icons/error.svg";
 
 const showIcon = (code) => {
   const weatherImage = document.getElementById("weather-image");
@@ -72,6 +73,9 @@ const showIcon = (code) => {
   }
   if (code === "50n") {
     weatherImage.src = i50n;
+  }
+  if (code === "error") {
+    weatherImage.src = error;
   }
 };
 export default showIcon;

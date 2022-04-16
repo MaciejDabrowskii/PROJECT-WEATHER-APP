@@ -8,6 +8,7 @@ const showData = (data, units) => {
     const temperature = document.querySelector(".temperature");
 
     const cityAndCoutry = document.createElement("li");
+    cityAndCoutry.classList.add("cityAndCoutry");
     cityAndCoutry.textContent = `${data.name}, ${data.sys.country}`;
 
     const wind = document.createElement("ul");
@@ -42,6 +43,7 @@ const showData = (data, units) => {
     const temperature = document.querySelector(".temperature");
 
     const cityAndCoutry = document.createElement("li");
+    cityAndCoutry.classList.add("cityAndCoutry");
     cityAndCoutry.textContent = `${data.name}, ${data.sys.country}`;
 
     const wind = document.createElement("ul");

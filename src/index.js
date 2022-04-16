@@ -82,8 +82,11 @@ async function getData() {
     weatherData = await searchByCityName(units);
     // IF USER ENTERED WRONG CITY NAME AND API RETURNED ERROR
     if (weatherData.cod === "404") {
+      showIcon("error");
+      document.querySelector(".temperature").textContent = "City not found!";
       alert("City not found!");
     }
+
     await showData(weatherData, units);
     await showIcon(weatherData.weather[0].icon);
     classMenager(weatherData);
