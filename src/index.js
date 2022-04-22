@@ -14,7 +14,7 @@ async function getData() {
 
   // IF USER REJECT GEOLOCATION FETCH DEFAULT LOCATION DATA:
   let getDefaultWeatherDataMetric = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=metric`,
+    `https://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=metric`,
     { mode: "cors" }
   )
     .then((resonse) => resonse.json())
@@ -22,7 +22,7 @@ async function getData() {
       console.log(error);
     });
   const getDefaultWeatherDataImperial = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=imperial`,
+    `https://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=imperial`,
     { mode: "cors" }
   )
     .then((resonse) => resonse.json())
