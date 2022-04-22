@@ -10,6 +10,10 @@
 
 Weather forecast site using the [OpenWeather API](https://openweathermap.org/api). The project is from [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/weather-app) curriculum.
 
+### Live Preview
+
+🔗 <b> [Live preview](https://maciejdabrowskii.github.io/PROJECT-WEATHER-APP/)</b>
+
 ### Features
 
 - Ability to get user current location and display weather
