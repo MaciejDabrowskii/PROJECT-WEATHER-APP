@@ -5,7 +5,8 @@ import classMenager from "./class-menager";
 import searchByCityName from "./search-city";
 import gitIcon from "./icons/gitLogo.png";
 
-async function getData() {
+async function getData()
+{
   let units = "metric";
   let counter = 0;
   document.querySelector(".units").textContent = `UNITS: ${units}`;
@@ -13,29 +14,33 @@ async function getData() {
   let weatherData;
 
   // IF USER REJECT GEOLOCATION FETCH DEFAULT LOCATION DATA:
-  let getDefaultWeatherDataMetric = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=metric`,
-    { mode: "cors" }
+  const getDefaultWeatherDataMetric = await fetch(
+    "https://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=metric",
+    { mode: "cors" },
   )
     .then((resonse) => resonse.json())
-    .catch((error) => {
+    .catch((error) =>
+    {
       console.log(error);
     });
   const getDefaultWeatherDataImperial = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=imperial`,
-    { mode: "cors" }
+    "https://api.openweathermap.org/data/2.5/weather?q=London&APPID=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=imperial",
+    { mode: "cors" },
   )
     .then((resonse) => resonse.json())
-    .catch((error) => {
+    .catch((error) =>
+    {
       console.log(error);
     });
 
   const defaultWeatherDataMetric = await getDefaultWeatherDataMetric;
 
   // GET USER COORDINATES
-  const position = await new Promise((resolve, reject) => {
+  const position = await new Promise((resolve, reject) =>
+  {
     navigator.geolocation.getCurrentPosition(resolve, reject);
-  }).catch((error) => {
+  }).catch((error) =>
+  {
     console.log(error);
     geoRejected = "yes";
     showData(defaultWeatherDataMetric, units);
@@ -43,19 +48,21 @@ async function getData() {
     classMenager(defaultWeatherDataMetric);
   });
 
-  //FETCH WEATHER DATA WITH API IF USER ALLOWED GEOLOCATION OR USED SEARCH
+  // FETCH WEATHER DATA WITH API IF USER ALLOWED GEOLOCATION OR USED SEARCH
   let getWeatherDataMetric;
   let getWeatherDataImperial;
   let weatherDataMatric;
   let weatherDataImperial;
 
-  if (geoRejected === "no") {
+  if (geoRejected === "no")
+  {
     getWeatherDataMetric = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${await position
         .coords.latitude}&lon=${await position.coords
         .longitude}&appid=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=metric`,
-      { mode: "cors" }
-    ).catch((error) => {
+      { mode: "cors" },
+    ).catch((error) =>
+    {
       console.log(error);
     });
 
@@ -63,8 +70,9 @@ async function getData() {
       `https://api.openweathermap.org/data/2.5/weather?lat=${await position
         .coords.latitude}&lon=${await position.coords
         .longitude}&appid=b28f3971f9895a1eb3ed3d2c2b3fdd63&units=imperial`,
-      { mode: "cors" }
-    ).catch((error) => {
+      { mode: "cors" },
+    ).catch((error) =>
+    {
       console.log(error);
     });
     weatherDataMatric = await getWeatherDataMetric.json();
@@ -76,13 +84,15 @@ async function getData() {
     classMenager(weatherData);
   }
 
-  //EVENT FOR SEARCH FORM
-  document.getElementById("search-btn").addEventListener("click", async () => {
-    counter++;
+  // EVENT FOR SEARCH FORM
+  document.getElementById("search-btn").addEventListener("click", async () =>
+  {
+    counter += 1;
     geoRejected = "no";
     weatherData = await searchByCityName(units);
     // IF USER ENTERED WRONG CITY NAME AND API RETURNED ERROR
-    if (weatherData.cod === "404") {
+    if (weatherData.cod === "404")
+    {
       showIcon("error");
       document.querySelector(".temperature").textContent = "City not found!";
       alert("City not found!");
@@ -95,10 +105,13 @@ async function getData() {
   // SWITCH UNITS FUNCTIONS
   document
     .getElementById("switch-units")
-    .addEventListener("click", async () => {
-      if (units === "metric") {
+    .addEventListener("click", async () =>
+    {
+      if (units === "metric")
+      {
         // IF USER REJECTED GEOLOCATION AT START AND APP DOWNLOADED DEFAULT DATA AND UNITS ARE METRIC, CHANGE DATA TO IMPERIAL UNITS AND DISPLAY NEW DATA:
-        if (geoRejected === "yes" && counter === 0) {
+        if (geoRejected === "yes" && counter === 0)
+        {
           units = "imperial";
           document.querySelector(".units").textContent = `UNITS: ${units}`;
           weatherData = getDefaultWeatherDataImperial;
@@ -106,21 +119,26 @@ async function getData() {
           showData(weatherData, units);
         }
         // IF USER ALLOWED GEOLOCATION AT START AND UNITS ARE METRIC, CHANGE GEOLOCATED DATA TO IMPERIAL UNITS AND DISPLAY NEW DATA:
-        if (counter === 0 && geoRejected === "no") {
+        if (counter === 0 && geoRejected === "no")
+        {
           weatherData = weatherDataImperial;
           units = "imperial";
           showData(weatherData, units);
         }
         // IF USER USED SEARCH AND UNITS ARE METRIC, CHANGE SEARCHED DATA TO IMPERIAL UNITS AND DISPLAY NEW DATA:
-        else if (counter > 0 && geoRejected === "no") {
+        else if (counter > 0 && geoRejected === "no")
+        {
           units = "imperial";
           document.querySelector(".units").textContent = `UNITS: ${units}`;
           weatherData = await searchByCityName(units);
           showData(weatherData, units);
         }
-      } else {
+      }
+      else
+      {
         // IF USER REJECTED GEOLOCATION AT START AND APP DOWNLOADED DEFAULT DATA AND UNITS ARE IMPERIAL, CHANGE DATA TO METRIC UNITS AND DISPLAY NEW DATA:
-        if (geoRejected === "yes" && counter === 0) {
+        if (geoRejected === "yes" && counter === 0)
+        {
           units = "metric";
           document.querySelector(".units").textContent = `UNITS: ${units}`;
           weatherData = getDefaultWeatherDataMetric;
@@ -128,13 +146,16 @@ async function getData() {
           showData(weatherData, units);
         }
         // IF USER ALLOWED GEOLOCATION AT START AND UNITS ARE IMPERIAL, CHANGE GEOLOCATED DATA TO METRIC UNITS AND DISPLAY NEW DATA:
-        if (counter === 0 && geoRejected === "no") {
+        if (counter === 0 && geoRejected === "no")
+        {
           weatherData = weatherDataMatric;
           units = "metric";
           document.querySelector(".units").textContent = `UNITS: ${units}`;
           showData(weatherData, units);
           // IF USER USED SEARCH AND UNITS ARE IMPERIAL, CHANGE SEARCHED DATA TO METRIC UNITS AND DISPLAY NEW DATA:
-        } else if (counter > 0 && geoRejected === "no") {
+        }
+        else if (counter > 0 && geoRejected === "no")
+        {
           units = "metric";
           document.querySelector(".units").textContent = `UNITS: ${units}`;
           weatherData = await searchByCityName(units);
@@ -143,7 +164,8 @@ async function getData() {
       }
     });
   document.querySelector("#gitIcon").src = gitIcon;
-  document.querySelector("#gitIcon").addEventListener("click", () => {
+  document.querySelector("#gitIcon").addEventListener("click", () =>
+  {
     window
       .open("https://github.com/MaciejDabrowskii?tab=repositories", "_blank")
       .focus();

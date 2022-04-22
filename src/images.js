@@ -18,63 +18,83 @@ import i50d from "./icons/50d.svg";
 import i50n from "./icons/50n.svg";
 import error from "./icons/error.svg";
 
-const showIcon = (code) => {
+const showIcon = (code) =>
+{
   const weatherImage = document.getElementById("weather-image");
-  if (code === "01d") {
+  if (code === "01d")
+  {
     weatherImage.src = i01d;
   }
-  if (code === "01n") {
+  if (code === "01n")
+  {
     weatherImage.src = i01n;
   }
-  if (code === "02d") {
+  if (code === "02d")
+  {
     weatherImage.src = i02d;
   }
-  if (code === "02n") {
+  if (code === "02n")
+  {
     weatherImage.src = i02n;
   }
-  if (code === "03d") {
+  if (code === "03d")
+  {
     weatherImage.src = i03d;
   }
-  if (code === "03n") {
+  if (code === "03n")
+  {
     weatherImage.src = i03n;
   }
-  if (code === "04d") {
+  if (code === "04d")
+  {
     weatherImage.src = i04d;
   }
-  if (code === "04n") {
+  if (code === "04n")
+  {
     weatherImage.src = i04n;
   }
-  if (code === "09d") {
+  if (code === "09d")
+  {
     weatherImage.src = i09d;
   }
-  if (code === "09n") {
+  if (code === "09n")
+  {
     weatherImage.src = i09n;
   }
-  if (code === "10d") {
+  if (code === "10d")
+  {
     weatherImage.src = i10d;
   }
-  if (code === "10n") {
+  if (code === "10n")
+  {
     weatherImage.src = i10n;
   }
-  if (code === "11d") {
+  if (code === "11d")
+  {
     weatherImage.src = i11d;
   }
-  if (code === "11n") {
+  if (code === "11n")
+  {
     weatherImage.src = i11n;
   }
-  if (code === "13d") {
+  if (code === "13d")
+  {
     weatherImage.src = i13d;
   }
-  if (code === "13n") {
+  if (code === "13n")
+  {
     weatherImage.src = i13n;
   }
-  if (code === "50d") {
+  if (code === "50d")
+  {
     weatherImage.src = i50d;
   }
-  if (code === "50n") {
+  if (code === "50n")
+  {
     weatherImage.src = i50n;
   }
-  if (code === "error") {
+  if (code === "error")
+  {
     weatherImage.src = error;
   }
 };

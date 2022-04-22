@@ -22,6 +22,9 @@
   "homepage": "https://github.com/MaciejDabrowskii/PROJECT-WEATHER-APP#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "style-loader": "^3.3.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.8.1"

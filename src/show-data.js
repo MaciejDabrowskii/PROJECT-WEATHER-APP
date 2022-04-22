@@ -1,7 +1,9 @@
 import windDirectionFunction from "./wind-direction";
 // CREATE DIVS AND POPULATE THEM WITH DATA
-const showData = (data, units) => {
-  if (units === "metric") {
+const showData = (data, units) =>
+{
+  if (units === "metric")
+  {
     document.querySelector(".units").textContent = `UNITS: ${units}`;
     const dataList = document.querySelector(".data-list");
     dataList.innerHTML = "";
@@ -13,7 +15,7 @@ const showData = (data, units) => {
 
     const wind = document.createElement("ul");
     wind.classList.add("wind-list");
-    wind.textContent = `Wind:`;
+    wind.textContent = "Wind:";
     const windSpeed = document.createElement("li");
     const windDirection = document.createElement("li");
     windSpeed.textContent = `Speed: ${data.wind.speed} m/s`;
@@ -36,7 +38,9 @@ const showData = (data, units) => {
     dataList.append(cityAndCoutry, wind, minMaxTemp, humidity, visibility);
 
     temperature.textContent = `${Math.round(data.main.temp * 10) / 10} °C`;
-  } else {
+  }
+  else
+  {
     document.querySelector(".units").textContent = `UNITS: ${units}`;
     const dataList = document.querySelector(".data-list");
     dataList.innerHTML = "";
@@ -48,7 +52,7 @@ const showData = (data, units) => {
 
     const wind = document.createElement("ul");
     wind.classList.add("wind-list");
-    wind.textContent = `Wind:`;
+    wind.textContent = "Wind:";
     const windSpeed = document.createElement("li");
     const windDirection = document.createElement("li");
     windSpeed.textContent = `Speed: ${data.wind.speed} mi/h`;
