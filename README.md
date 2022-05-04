@@ -2,7 +2,7 @@
   
 # PROJECT-WEATHER-APP
 
-<img alt="App preview" https://raw.githubusercontent.com/MaciejDabrowskii/PROJECT-WEATHER-APP/main/dist/app-preview.jpg">
+<img alt="App preview" src="https://raw.githubusercontent.com/MaciejDabrowskii/PROJECT-WEATHER-APP/main/dist/app-preview.jpg">
 
 </div>
 
