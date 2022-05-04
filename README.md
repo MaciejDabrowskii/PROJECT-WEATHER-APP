@@ -2,7 +2,7 @@
   
 # PROJECT-WEATHER-APP
 
-<img alt="App preview" src="https://photos.google.com/photo/AF1QipOXWTfAo-vDvxpNKHDCG8wIf60U1ZHl0cYxoRqw">
+<img alt="App preview" https://raw.githubusercontent.com/MaciejDabrowskii/PROJECT-WEATHER-APP/main/dist/app-preview.jpg">
 
 </div>
 
