@@ -19,7 +19,6 @@ Weather forecast site using the [OpenWeather API](https://openweathermap.org/api
 - Ability to get user current location and display weather
 - Ability to search for a specific location
 - Possibility to display the data in metric or imperial units
-- Responsive design
 
 ### Technologies
 
